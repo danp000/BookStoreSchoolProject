@@ -6,6 +6,7 @@
     "outDir": "./dist/out-tsc",
     "forceConsistentCasingInFileNames": true,
     "strict": true,
+    "esModuleInterop": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
     "noImplicitReturns": true,
@@ -16,6 +17,14 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
+    "types": [
+      "jquery",
+      "node"
+    ],
+    "typeRoots": [
+      "./node_modules/@types",
+      "./@types",
+    ],
     "target": "es2020",
     "module": "es2020",
     "lib": [

@@ -1,0 +1,21 @@
+#logo-login {
+  width: 80px;
+  height: 70px;
+  border-radius: 34%;
+}
+.login-register, .expand {
+  background-image: url('./../../../assets/background/agic-light-ed-48.jpg');
+  margin-top: -0.4px;
+}
+.card-body {
+  height: 510px;
+} 
+.form-group {
+  margin-bottom: 5px;
+}
+.m-t-5 {
+  margin-top: 10px;
+}
+.btn-login {
+  width: 35%;
+}

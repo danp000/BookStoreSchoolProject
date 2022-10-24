@@ -1,0 +1,114 @@
+<header class="topbar">
+  <nav class="navbar top-navbar">
+    <!-- Logo -->
+    <div class="navbar-logo">
+      <a class="navbar-brand" routerLink="/">
+        <!-- Logo icon -->
+          <img src="../../../assets/logo/328.png" alt="booklogo" class="logo"/>
+      </a>
+    </div>
+    
+    <div class="navbar-collapse">
+      <!-- <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link nav-toggler" href=""><i class="ti-menu"></i></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link sidebartoggler" href=""><i class="ti-menu"></i></a>
+        </li>
+        <li class="nav-item hidden-sm-down"></li>
+      </ul> -->
+      <ul class="navbar-nav my-lg-0">
+        <!-- Search -->
+        <li class="nav-item search-box hidden">
+          <a class="nav-link hidden-sm-down"><i class="ti-search"></i></a>
+          <form class="app-search">
+            <input
+              type="text"
+              class="form-control"
+              placeholder="Search & enter"
+            />
+            <a class="srh-btn"><i class="ti-close"></i></a>
+          </form>
+        </li>
+
+        <!-- toggle and nav items -->
+        <li class="nav-item dropdown">
+          <div *ngIf="logged" router class="div-link dropdown-divLink" [class.dropdown-active]="toggleLink"
+               (mouseenter)="showList()" (mouseleave)="hideList()">
+              <a class="nav-link dropdown-toggle"
+               data-toggle="dropdown" aria-haspopup="true"
+               > Mi Cuenta <mat-icon class="icon-display">
+                 account_circle</mat-icon>
+              </a>
+          </div>
+
+          <div *ngIf="!logged" class="div-link log-divLink">
+            <a class="nav-link toggle-link log-link" routerLink="login"
+                aria-expanded="false">Ingresar <mat-icon
+                class="icon-display">meeting_room</mat-icon>
+            </a>
+          </div>
+         
+          <div [class.dropdown-menu-right]="toggleLink" [class.hidden]="!toggleLink">
+            <ul class="dropdown-list" (mouseenter)="showList()"
+                  (mouseleave)="hideList()">
+              <li id="li-link"><a class="drop-link" routerLinkActive="activeLink" routerLink="ajustes">
+                    <mat-icon>manage_accounts</mat-icon> Administar cuenta</a></li>
+              <li><a class="drop-link" href=""><mat-icon>shopping_cart_checkout</mat-icon> 
+                    Estado Pedidos</a></li>
+              <li><a class="drop-link" routerLink=""><mat-icon>manage_history</mat-icon>
+                    Historial</a></li>
+              <li><a class="drop-link" routerLink="agregar"
+                      routerLinkActive="activeLink">
+                  <mat-icon>add_to_queue</mat-icon> Añadir Libro</a></li>
+            </ul>
+          </div>
+        </li>
+       
+        <li class="nav-item">
+          <div class="toggleLink linkDiv1">
+              <a class="nav-link toggle-link" href=""
+                aria-expanded="false"> Favoritos<mat-icon
+                  class="icon-display">star_border_purple500
+              </mat-icon>
+              </a>
+          </div>
+          <!-- <div class="dropdown-menu dropdown-menu hidden"aria-labelledby="2">
+            <ul>
+              <li><div class="drop-title">You have n new messages</div></li>
+              <li><div class="message-center"></div></li>
+              <li><a class="nav-link text-center" href=""><strong>See all e-Mails</strong>
+                  <i class="fa fa-angle-right"></i>
+                </a>
+              </li>
+            </ul>
+          </div> -->
+        </li>
+        <li class="nav-item">
+          <div class="toggleLink linkDiv2">
+            <a class="nav-link toggle-link" href=""
+              aria-expanded="false"> Cesta<mat-icon
+                class="icon-display">shopping_basket
+            </mat-icon>
+            </a>
+          </div>
+        </li>
+        <li class="nav-item">
+          <div *ngIf="logged" class="toggleLink linkDiv3">
+            <a (click)="logout()" class="nav-link toggle-link tol-3" routerLink="register"
+                aria-expanded="false"><mat-icon
+                class="icon-display">logout</mat-icon>
+            </a>
+          </div>
+          <div *ngIf="!logged" class="toggleLink linkDiv4">
+            <a (click)="login()" class="nav-link toggle-link tol-3" routerLink="ajustes"
+                aria-expanded="false"><mat-icon
+                class="icon-display">login</mat-icon>
+            </a>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </nav>
+</header>

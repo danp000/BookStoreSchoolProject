@@ -1,0 +1,220 @@
+
+.card, .expand {
+  min-height: 760px;
+  background-image: url('./../../../assets/background/5wallpaper.jpg');
+}
+
+.card-body {
+  background-color: rgba(255, 236, 185, 0.596);
+  color: rgba(255, 65, 31, 0.863);
+  margin-top: 13px;
+  min-height: 96.5%;
+}
+.card-subtitle {
+  margin-top: -35px;
+}
+#columna-1 {
+  display: block;
+  width: 50%;
+  clear: both;
+  float: left;
+}
+.form-horizontal {
+  margin-top: -30px;
+  margin-left: 10px;
+}
+.form-control {
+  height: 35px;
+  width: 90%;
+  background-color:rgba(255, 225, 115, 0.842);
+  color: rgba(80, 54, 35, 0.911);
+  font-weight: 540;
+  transition: all 250ms;
+}
+.form-control:focus {
+  transform: scale(1.0,1.0);
+  font-weight: 570;
+  color: rgba(61, 40, 28, 0.986);
+}
+.rst-group {
+  margin-top: 7px;
+}
+.date-control {
+  text-indent: 6.3%;
+  transition: all 100ms;
+}
+.select-group {
+  display: block;
+  /* flex-direction: row;
+  flex-wrap: wrap; */
+  margin-top: 7px;
+}
+.custom-select {
+  margin-top: 0px;
+  margin-left: 0px;
+}
+.custom-select:focus {
+  font-size: 19px;
+}
+.label-select {
+  margin-left: 7px;
+}
+.input-group-addon-icon {
+  color: rgba(255, 135, 23, 0.952);
+  margin-left: 5px;
+}
+.input-group-addon-icon:nth-child(-n+2) {
+  margin-top: -29px; 
+}
+.input-group-addon-icon:nth-child(3n+3) {
+  margin-top: -38.5px; 
+}
+.input-group-addon-icon:nth-child(4) {
+  margin-top: -40px; 
+}
+
+.date-icon {
+  margin-left: 1%;
+}
+.input-addon-icon {
+  color: rgba(255, 135, 23, 0.952);
+  margin-top: -30px;
+  margin-left:1%;
+}
+.btn-submit {
+  width: 30%;
+  margin-top: 30px;
+  color: rgba(58, 44, 34, 0.904);
+  font-size: 19px;
+  font-weight: 570;
+  border: 0.5px solid rgb(242, 244, 245);
+  background-color: rgba(171, 255, 123, 0.767);
+  box-shadow: 1px 1.1px 3px rgba(186, 188, 202, 0.781) inset,
+               1.3px -1.7px 3.2px rgba(183, 185, 202, 0.712);
+}
+.btn-submit:hover {
+  color: rgb(153, 42, 8);
+  background-color: rgb(170, 255, 121);
+  box-shadow: -1.4px -1.5px 3.2px rgba(186, 188, 202, 0.781) inset,
+               -1.5px 1.6px 3.4px rgba(183, 185, 202, 0.712), 
+               0 0 3.1px rgba(183, 185, 202, 0.712) inset;
+}
+
+.hiden {
+  display: none;
+}
+#columna-2 {
+  display: block;
+  width: 50%;
+  margin-top: -55px;
+  float: left;
+}
+#area-desc {
+  height: 215px;
+  width: 98%;
+  font-size: 17px;
+  font-weight: 540;
+  border: 0.5px solid rgb(242, 244, 245);
+  border-radius: 2.4%;
+  text-indent: 2%;
+  background-color:rgba(255, 225, 117, 0.425);
+  color: rgba(73, 50, 33, 0.911);
+  font-weight: 540;
+  transition: all 250ms;
+}
+#area-desc:hover {
+  background-color: rgba(255, 245, 209, 0.808);
+  transform:scale(1.04, 1.03);
+  z-index: 2;
+}
+#area-desc:focus {
+  background-color: rgba(255, 249, 228, 0.973);
+  font-weight: 570;
+  transform:scale(1.11, 1.10);
+  z-index: 444;
+}
+.img-control {
+  padding-top: 3.4px;
+  width: 98%;
+  font-size: 18px;
+}
+.img-control:hover,
+.img-control:focus {
+  border: 0.5px solid rgb(242, 244, 245);
+  font-size: 18px;
+}
+.icon-dsc {
+  display: block;
+  scale: 1.3;
+  margin-top: -45px;
+  margin-left: 55px;
+  padding-bottom: 5px;
+  z-index: 0;
+}
+.img-group {
+  margin-top: 13px;
+}
+#view {
+  max-width: 65%;
+  max-height: 240px;
+  margin-left: 27.5%;
+  border: 4.8px groove rgba(255, 163, 58, 0.89);
+}
+.m-b-1 {
+  margin-left: 37%;
+  width: 88.5%;
+}
+
+@media (max-width: 1234px) {
+  #view {
+    margin-left: 24.5%;
+  }
+}
+@media (max-width: 1044px) {
+  #view {
+    margin-left: 21.6%;
+  }
+  .btn-submit {
+    width: 37.5%;
+  }
+  .m-b-1 {
+    width: 95.5%;
+  }
+}
+@media (max-width: 990px) {
+  .card-body {
+   width: 91.6%;
+   margin-left: 4.2%;
+  }
+}
+@media (max-width: 930px) {
+  .card-body {
+   width: 87%;
+   margin-left: 6.4%;
+   min-height: 710px;
+  }
+}
+@media (max-width: 815px) {
+  .card-body {
+   width: 91%;
+   margin-left: 4.2%;
+  }
+}
+@media (max-width: 735px) {
+  .card-body {
+   width: 94%;
+   margin-left: 3%;
+  }
+}
+@media (max-width: 670px) {
+  .card-body {
+   width: 98%;
+   margin-left: 1%;
+  }
+}
+@media (max-width: 590px) {
+  .card-body {
+   width: 100%;
+   margin-left: 0%;
+  }
+}

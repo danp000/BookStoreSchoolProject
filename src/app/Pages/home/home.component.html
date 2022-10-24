@@ -1,0 +1,357 @@
+<div [class.container]="!pgSv.collapse" [class.expand]="pgSv.collapse">
+  <div class="card-body">
+    <div id="header">
+      <h4 class="d-inline title">
+        Los libros de toda la vida
+      </h4>
+      <img src="./../../../assets/logo/leafs-ed.png" id="logo" alt="logo-inicio">
+    </div>
+
+    <!-- === Search input === -->
+    <div class="row search-section animated slideInDown fast">
+      <div class="card-search">
+          <input
+            type="text"
+            class="input-search"
+            placeholder="Que título te esta interesado?"
+            (keyup)="buscarUsuario( terminoBusqueda.value )"
+            #terminoBusqueda
+          />
+        </div>
+    </div>
+
+    <div class="sort-barContainer">
+      <div class="sort-flexCard">
+        <div class="sort-search sort-results">
+          <span class="number-results">
+            {{ desde }} - {{ retornaTotalEnPagina() }} de {{ totalLibros }} resultados
+          </span>
+        </div>
+        <div class="sort-search sort-pages">
+          <span class="sort-title">
+            Página: 
+          </span>
+          <div class="sort-optionsContainer">
+            <select class="sort-select sort-pages-select" id="sortBar-sortpg">
+              <option *ngFor="let pg of pagesArray" [value]="pg" aria-selected="true">
+                {{ pg }}
+              </option>
+            </select>
+          </div>
+        </div>
+        <div class="sort-search sort-items">
+          <div>
+            <span class="sort-title">
+              Ordenar por:
+            </span>
+          </div>
+          <div class="sort-optionsContainer">
+            <select class="sort-select" id="sortBar-sortby">
+              <option value="mostPopular-desc" aria-selected="true">Most Popular
+              </option>
+              <option value="topMatches-desc" aria-selected="false">Relevance</option>
+              <option value="bestsellers-desc" aria-selected="false">Bestsellers
+              </option>
+              <option value="title-asc" aria-selected="false">Título (A a Z)</option>
+              <option value="title-desc" aria-selected="false">Título (Z a A)</option>
+              <option value="publishDate-desc" aria-selected="false">Los más nuevos</option>
+              <option value="publishDate-asc" aria-selected="false">Los más viejos</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- === Loading message === -->
+    <div *ngIf="!libros" class="loading-messageCard animated jello fast">
+        <div class="alert alert-info text-center" role="alert">
+          <h4 class="alert-heading">Cargando</h4>
+          <i class="fa fa-spin fa-spinner fa-3x" aria-hidden="true"></i>
+          <hr />
+          <p class="mb-0">Por favor espere que se cargue la información</p>
+        </div>
+    </div>
+
+    <!-- === Content section === -->
+    <!-- Row -->
+    <div class="wrapper">
+      <!-- column -->
+      <div class="col-lg-3 col-md-6">
+        <!-- Card -->
+        <div class="card">
+          <img
+            routerLink="detalles"
+            class="card-img-top img-responsive"
+            src="./../../../assets/books/cartas_desde_la_isla.jpg"
+            alt="book cover"
+          />
+          <div class="sub-card">
+            <h4 class="card-title" routerLink="detalles">Cartas desde la isla Skye</h4>
+            <h5 class="card-autor">Jessica Brockmole y Santiago del Rey Farrés</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content gujuhwsn ujefbwuieb.
+            </p>
+            <a (click)="mdSv.abrirModal()" class="link-resumen">Leer resumen</a>
+            <h4 class="card-price">Price: 3.43<span class="material-icons icon-euro">
+              euro
+            </span></h4>
+            <h5 class="card-format">Formato: Tapa dura</h5>
+            <h5 class="card-state">Estado: Muy bueno</h5>
+            <button id="addCartBtn" type="button"><span class="material-icons add-icon">
+              add_shopping_cart
+            </span></button>
+          </div>
+        </div>
+        <!-- Card -->
+      </div>
+      <!-- column -->
+      <div class="col-lg-3 col-md-6">
+        <!-- Card -->
+        <div class="card">
+          <img
+            routerLink="detalles"
+            class="card-img-top img-responsive"
+            src="./../../../assets/books/tierra_media.jpg"
+            alt="book cover"
+          />
+          <div class="sub-card">
+            <h4 class="card-title" routerLink="detalles">La naturaleza de tierra media</h4>
+            <h5 class="card-autor">Christopher Tolkien</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <a (click)="mdSv.abrirModal()" class="link-resumen">Leer resumen</a>
+            <h4 class="card-price">Price: 3.43<span class="material-icons icon-euro">
+              euro
+            </span></h4>
+            <h5 class="card-format">Formato: Tapa blanda</h5>
+            <h5 class="card-state">Estado: Bueno</h5>
+            <button id="addCartBtn" type="button"><span class="material-icons add-icon">
+                add_shopping_cart
+            </span></button>
+          </div>
+        </div>
+        <!-- Card -->
+      </div>
+      <!-- column -->
+      <div class="col-lg-3 col-md-6">
+        <!-- Card -->
+        <div class="card">
+          <img routerLink="detalles"
+            class="card-img-top img-responsive"
+            src="./../../../assets/books/pinocchio.jpg"
+            alt="book cover"
+          />
+          <div class="sub-card">
+            <h4 class="card-title" routerLink="detalles">Pinocchio</h4>
+            <h5 class="card-autor">Carlo Collodi</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <a (click)="mdSv.abrirModal()" class="link-resumen">Leer resumen</a>
+            <h4 class="card-price">Price: 3.43<span class="material-icons icon-euro">
+              euro
+            </span></h4>
+            <h5 class="card-format">Formato: Cómico</h5>
+            <h5 class="card-state">Estado: Aceptable</h5>
+            <button id="addCartBtn" type="button"><span class="material-icons add-icon">
+              add_shopping_cart
+            </span></button>
+          </div>
+        </div>
+        <!-- Card -->
+      </div>
+      <!-- column -->
+      <div class="col-lg-3 col-md-6">
+        <!-- Card -->
+        <div class="card">
+          <img routerLink="detalles"
+            class="card-img-top img-responsive"
+            src="./../../../assets/books/gondolin.jpg"
+            alt="book cover"
+          />
+          <div class="sub-card">
+            <h4 class="card-title" routerLink="detalles">The fall of Gondolin</h4>
+            <h5 class="card-autor">Christopher Tolkien</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <a (click)="mdSv.abrirModal()" class="link-resumen">Leer resumen</a>
+            <h4 class="card-price">Price: 3.43<span class="material-icons icon-euro">
+                  euro
+            </span></h4>
+            <h5 class="card-format">Formato: eBook</h5>
+            <h5 class="card-state">Estado: Bueno</h5>
+            <button id="addCartBtn" type="button"><span class="material-icons add-icon">
+              add_shopping_cart
+            </span></button>
+          </div>
+        </div>
+        <!-- Card -->
+      </div>
+      <!-- column -->
+      <div class="col-lg-3 col-md-6">
+        <!-- Card -->
+        <div class="card">
+          <img routerLink="detalles"
+            class="card-img-top img-responsive"
+            src="./../../../assets/books/la-vuelta-del-mundo-JV.jpg"
+            alt="book cover"
+          />
+          <div class="sub-card">
+            <h4 class="card-title" routerLink="detalles">La vuelta al mundo en 80 dias</h4>
+            <h5 class="card-autor">Julio Verne</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <a (click)="mdSv.abrirModal()" class="link-resumen">Leer resumen</a>
+             <h4 class="card-price">Price: 3.43<span class="material-icons icon-euro">
+                  euro
+            </span></h4>
+            <h5 class="card-format">Formato: Tapa blanda</h5>
+            <h5 class="card-state">Estado: Nuevo</h5>
+            <button id="addCartBtn" type="button"><span class="material-icons add-icon">
+              add_shopping_cart
+            </span></button>
+          </div>
+        </div>
+        <!-- Card -->
+      </div>
+      <!-- column -->
+      <div class="col-lg-3 col-md-6">
+        <!-- Card -->
+        <div class="card">
+          <img routerLink="detalles"
+            class="card-img-top img-responsive"
+            src="./../../../assets/books/robin-hood-97.jpg"
+            alt="book cover"
+          />
+          <div class="sub-card">
+            <h4 class="card-title" routerLink="detalles">Robin Hood</h4>
+            <h5 class="card-autor">Neil Smith</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <a (click)="mdSv.abrirModal()" class="link-resumen">Leer resumen</a>
+             <h4 class="card-price">Price: 3.43<span class="material-icons icon-euro">
+                  euro
+            </span></h4>
+            <h5 class="card-format">Formato:Tapa blanda</h5>
+            <h5 class="card-state">Estado: Como nuevo</h5>
+            <button id="addCartBtn" type="button"><span class="material-icons add-icon">
+              add_shopping_cart
+            </span></button>
+          </div>
+        </div>
+        <!-- Card -->
+      </div>
+      <!-- column -->
+      <div class="col-lg-3 col-md-6 img-responsive">
+        <!-- Card -->
+        <div class="card">
+          <img routerLink="detalles"
+            class="card-img-top img-responsive"
+            src="./../../../assets/books/capitan-de-quince.jpg"
+            alt="book cover"
+          />
+          <div class="sub-card">
+            <h4 class="card-title" routerLink="detalles">Un capitan de quince años</h4>
+            <h5 class="card-autor">Julio Verne</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <a (click)="mdSv.abrirModal()" class="link-resumen">Leer resumen</a>
+             <h4 class="card-price">Price: 31.43<span class="material-icons icon-euro">
+                  euro
+            </span></h4>
+            <h5 class="card-format">Formato: Tapa dura</h5>
+            <h5 class="card-state">Estado: Nuevo</h5>
+            <button id="addCartBtn" type="button"><span class="material-icons add-icon">
+              add_shopping_cart
+            </span></button>
+          </div>
+        </div>
+        <!-- Card -->
+      </div>
+      <!-- column -->
+      <div class="col-lg-3 col-md-6">
+        <!-- Card -->
+        <div class="card">
+          <img routerLink="detalles"
+            class="card-img-top img-responsive"
+            src="./../../../assets/books/veinte-mil-leguas.jpg"
+            alt="book cover"
+          />
+          <div class="sub-card">
+            <h4 class="card-title" routerLink="detalles">Veinte mil leguas de viaje submarino</h4>
+            <h5 class="card-autor">Jules Verne</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <a (click)="mdSv.abrirModal()" class="link-resumen">Leer resumen</a>
+             <h4 class="card-price">Price: 23.43<span class="material-icons icon-euro">
+                  euro
+            </span></h4>
+            <h5 class="card-format">Formato: Tapa dura</h5>
+            <h5 class="card-state">Estado: Aceptable</h5>
+            <button id="addCartBtn" type="button"><span class="material-icons add-icon">
+              add_shopping_cart
+            </span></button>
+          </div>
+        </div>
+        <!-- Card -->
+      </div>
+      <!-- column -->
+      <div class="col-lg-3 col-md-6">
+        <!-- Card -->
+        <div class="card">
+          <img routerLink="detalles"
+            class="card-img-top img-responsive"
+            src="./../../../assets/books/señor_anillos.jpg"
+            alt="book cover"
+          />
+          <div class="sub-card">
+            <h4 class="card-title">El Señor de los anillos</h4>
+            <h5 class="card-autor">Christopher Tolkien</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+            <a (click)="mdSv.abrirModal()" class="link-resumen">Leer resumen</a>
+             <h4 class="card-price">Price: 13.43<span class="material-icons icon-euro">
+                  euro
+            </span></h4>
+            <h5 class="card-format">Formato: eBook</h5>
+            <h5 class="card-state">Como nuevo</h5>
+            <button id="addCartBtn" type="button"><span class="material-icons add-icon">
+              add_shopping_cart
+            </span></button>
+          </div>
+        </div>
+        <!-- Card -->
+      </div>
+      <!-- column -->
+    </div>
+    <!-- Row -->
+    <div class="swichPage-card">
+      <div class="prevNext-grid">
+        <button (click)="(5)" class="button btn-next" type="button"> 
+          <span class="material-icons arrow-icon prev-icon">
+            arrow_back_ios
+        </span></button>
+        <button (click)="(-5)" class="button btn-previous" type="button"> 
+          <span class="material-icons arrow-icon next-icon">
+            arrow_forward_ios
+        </span></button>        
+      </div>
+    </div>
+  </div>
+</div>

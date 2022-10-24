@@ -1,0 +1,1054 @@
+
+#body {
+  background-color: rgba(178, 224, 217, 0.144);
+  font-family:  mitr-medium;
+}
+.container {
+  width: 100%;
+  padding: 5px;
+  padding-bottom: 10px;
+  /* background-image: url(./../../../assets/background/patterns/background-gray.png); */
+}
+.container-up {
+  display: block;
+  min-height: 800px;
+  width: 100%;
+  background-color: ivory;
+}
+.extend-containerUp {
+  min-height: 980px;
+}
+.card-body {
+  display: block;
+  width: 100%;
+  min-height: 90%;
+  margin-bottom: 10px;
+  margin-left: 8px;
+  padding: 10px;
+  font-weight: bolder;
+  color: rgba(29, 74, 80, 0.952);
+}
+#left-wrapper {
+  display: block;
+  float: left;
+  clear: both;
+  width: 24%;
+  max-height: 510px;
+  padding-bottom: 1.8%;
+  border-right: 1.5px double rgba(145, 111, 238, 0.39);
+  border-bottom: 1.1px double rgba(118, 80, 221, 0.301);
+}
+.card-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  margin-top: 11px;
+  padding: 4px;
+}
+.card-img-top {
+  max-width: 100%;
+  max-height: 405px;
+  margin-top: 16px;
+  margin-left: 3px;
+  border: 3.4px groove rgb(198, 247, 253);
+}
+.card-review {
+  display: block;
+}
+.rating-flex {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.rating-top {
+  margin-top: -7px;
+  margin-left: 50px;
+}
+.ratingStar-sp {
+  width: 13.3%;
+}
+.ratingStar-ov {
+  width: 110%;
+  margin-right: 0.45px;
+  height: 80%;
+}
+.link-res {
+  display: block;
+  cursor: pointer;
+  margin-left: 31%;
+  margin-top: -9px;
+  font-size: 15.3px;
+  font-weight: 580;
+  color: rgba(94, 59, 253, 0.897);
+}
+.link-res:hover {
+  font-weight: 595;
+  color: rgb(81, 42, 252);
+}
+#right-wrapper {
+  display: block;
+  float: left;
+  width: 75.5%;
+  margin-left: 0;
+}
+.card-select {
+  display: block;
+  float: left;
+  width: 68%;
+  margin-left: 0;
+  margin-top: 0;
+  padding-left: 1.7%;
+  padding-right: 1.5%;
+  padding-bottom: 0.2%;
+  border-right: 1.5px double rgba(148, 118, 230, 0.452);
+  border-bottom: 1.2px double rgba(128, 99, 206, 0.281);
+}
+.card-title  {
+  display: block;
+  margin-bottom: 5px;
+  margin-top: 38px;
+  line-height: 18px;
+  padding-bottom: 0;
+  font-size: 21px;
+}
+.card-autor {
+  display: block;
+  margin-top: 0;
+  font-size: larger;
+  color: rgba(28, 87, 95, 0.952);
+}
+.de-sp {
+  font-size:medium;
+  color: rgba(62, 119, 107, 0.938);
+}
+.select-title {
+  display: block;
+  margin-top: 5.5px;
+  margin-bottom: 6.5px;
+  font-weight: 340;
+  font-size: 15.2px;
+}
+.btn {
+  margin-left: 2.5%;
+  padding-left: 2%;
+  padding-right: 2%;
+  font-weight: 760;
+  border: none;
+  background-color: rgba(230, 195, 216, 0.719);
+  color: rgba(20, 52, 58, 0.966);
+}
+.btn:hover {
+  cursor: crosshair;
+  background-color: rgba(223, 169, 255, 0.911);
+  border: 1.05px dashed rgba(153, 112, 185, 0.918);
+  color: rgb(0, 61, 71);
+}
+.btn-group-lg {
+  display: block;
+  margin-bottom: 0px;
+}
+.selectedClass {
+  background-color: bisque;
+  border: 3px double rgba(170, 157, 142, 0.952);
+}
+.selectedClass:hover {
+  background-color: rgb(252, 240, 227);
+  border: 3px double rgba(197, 188, 179, 0.952);
+}
+.btn-group-rg {
+  display: block;
+  margin-top: 3px;
+}
+.btn-format {
+  height: 70px;
+  min-width: 20.5%;
+  margin-bottom: 10px;
+}
+.btn-state {
+  height: 65px;
+  min-width: 21%;
+  margin-bottom: 10px;
+}
+.btn-state:disabled {
+  cursor: default;
+  background-color: rgba(211, 196, 219, 0.473);
+  margin-top: -10px;
+  opacity: 0.75;
+}
+.btn-state:disabled:hover {
+  cursor: default;
+  background-color: rgba(205, 199, 209, 0.473);
+  border: none;
+}
+.precio-btn {
+  display: block;
+  padding-top: 4px;
+  text-align: center;
+  font-weight: 550;
+  color: rgba(42, 68, 73, 0.973);
+}
+.card-info {
+  display: block;
+  float: left;
+  width: 32%;
+  padding-right: 1%;
+  padding-left: 1.4%;
+  border-top: 1.1px double rgba(118, 84, 212, 0.24);
+}
+.card-format, .card-state {
+  display: block;
+  font-size: 17.5px;
+  color: rgba(56, 52, 87, 0.952);
+}
+.card-format {
+  margin-top: 34px;
+  margin-bottom: 0;
+}
+.card-state {
+  margin-top: 7px;
+  margin-bottom: 0;
+}
+.card-disp {
+  display: block;
+  margin-top: 18px;
+  margin-bottom: 8px;
+  font-size: 14.5px;
+}
+.cant {
+  font-size: 16.7px;
+}
+#cantidad {
+  margin-left: 8px;
+  height: 34px;
+  width: 30%;
+  font-size: large;
+  border: none;
+  background-color: rgba(231, 226, 247, 0.753);
+}
+#cantidad:hover {
+  font-weight: 555;
+  background-color: rgba(192, 211, 247, 0.877);
+}
+.card-price {
+  display: block;
+  float: left;
+  clear: both;
+  margin-top: 14px;
+  font-size: 18.3px;
+  color: rgba(57, 26, 107, 0.925);
+}
+.icon-euro {
+  display: block;
+  float:right;
+  margin-top: -7.4px;
+  padding-top: 10px;
+  font-weight: 600;
+}
+#addCartBtn {
+  width: 90%;
+  height: 55px;
+  margin-top: 10px;
+  padding-bottom: 7px;
+  padding-top: 6px;
+  font-weight: 555;
+  font-size: 16.8px;
+  border: none;
+  color: rgba(37, 43, 63, 0.877);
+  background-color: rgba(222, 191, 250, 0.719);
+}
+#addCartBtn:hover {
+  cursor: crosshair;
+  padding-top: 4.2px;
+  font-weight: 575;
+  border-bottom: 1.7px dashed rgba(124, 90, 179, 0.918);
+  border-top: 1.5px dashed rgba(124, 90, 179, 0.918);
+  box-shadow: 4.3px 0 5px rgba(115, 111, 122, 0.582) inset, -4.3px 0 5px rgba(113, 108, 122, 0.568) inset;
+  color: rgba(11, 19, 43, 0.952);
+  background-color: rgba(198, 166, 250, 0.89);
+}
+#addCartBtn:active {
+  transform: rotateX(7deg);
+  transform: rotateY(7deg);
+}
+.add-icon {
+  display: block;
+  margin-top: 2px;
+}
+.hidden-text {
+  font-weight: 200;
+  color: rgb(113, 120, 121);
+}
+#bottom-wrapper {
+  display: block;
+  float: left;
+  width: 99.8%;
+  min-height: 250px;
+  margin-bottom: 15px;
+  margin-top: 40px;
+}
+#summary-bookCard {
+  display: block;
+  width: 92.5%;
+  min-height: 200px;
+  margin-bottom: 20px;
+  margin-left: 2.65%;
+  padding: 1%;
+  background-color: rgba(255, 247, 231, 0.808);
+  border: 1.9px dashed rgba(209, 153, 161, 0.664);
+}
+.sum-title {
+  display: block;
+  width: 100%;
+  height: 64px;
+  margin-left: 0;
+  margin-top: 0;
+  margin-bottom: 15px;
+  line-height: 54px;
+  text-indent: 10%;
+  font-size: 22.4px;
+  border-bottom: 1.9px double rgb(247, 217, 169);
+  background-color: rgba(255, 239, 213, 0.877);
+  color: rgba(45, 104, 67, 0.89);
+}
+.sum-content-short {
+  display: block;
+  overflow: hidden;
+  height: 106px;
+  margin-top: 5px;
+  margin-bottom: 3px;
+  padding-left: 1%;
+  padding-right: 0.5%;
+  text-indent: 3%;
+  font-weight: 400;
+  color: rgba(25, 85, 77, 0.863);;
+}
+.sum-long {
+  display: block;
+  margin-bottom: 20px;
+  height: auto;
+}
+.dots {
+  margin-left: 85%;
+  letter-spacing: 2.3px;
+}
+.read-allBtn {
+  cursor: pointer;
+  margin-left: -9px;
+  height: 29px;
+  width: 13%;
+  font-size: 14.3px;
+  font-weight: 560;
+  border: none;
+  background-color: transparent;
+  color: rgba(32, 52, 90, 0.856);
+}
+.read-allBtn:hover {
+  text-decoration-style:dotted;
+  text-decoration: overline dotted rgba(46, 235, 162, 0.897);
+  color: rgb(5, 48, 128);
+}
+.read-allBtn:focus {
+  border: 2.2px dotted rgba(123, 233, 123, 0.801);
+}
+.read-btnSpace {
+  margin-left: 85%;
+}
+/* BELLOW SECTION */
+.second-part {
+  width: 130%;
+  height: auto;
+  background-color: rgba(223, 238, 234, 0.322);
+  margin-left: -30%;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+.regroup {
+  width: 110%;
+  height: auto;
+  background-color: rgba(213, 233, 229, 0.425);
+  margin-left: -10%;
+  margin-bottom: 20px;
+  margin-top: 0;
+}
+.container-down {
+  width: 91%;
+  min-height: 750px;
+  margin-left: 8.5%;
+  margin-bottom: 10px;
+  margin-top: 0;
+  padding-top: 2px;
+  padding-bottom: 15px;
+  background-color: rgba(235, 228, 214, 0.158);
+}
+.container-extended {
+  width: 93%;
+  margin-left: 5.9%;
+}
+#details-card {
+  display: block;
+  width: 95.5%;
+  min-height: 260px;
+  margin-top: 44px;
+  margin-left: 1.25%;
+  padding: 1.7%;
+  color: rgba(36, 27, 39, 0.726);
+  background-color: rgba(235, 215, 212, 0.568);
+  box-shadow: 0 -2.4px 2.8px rgba(228, 218, 205, 0.233) inset, -2.4px 0 2.8px rgba(226, 219, 209, 0.233) inset,
+               2.4px -3.4px 2.8px rgba(233, 226, 215, 0.233) inset;
+  border-top: 1.9px double rgba(209, 168, 113, 0.473);
+}
+.det-edit {
+  display: block;
+  float: left;
+  clear: both;
+  width: 42%;
+}
+.det-title {
+  display: block;
+  width: 92%;
+  height: 45px;
+  margin-top: 0;
+  margin-bottom: 5px;
+  text-indent: 19%;
+  font-size: large;
+  line-height: 40px;
+  background-color: rgba(235, 198, 192, 0.616);
+}
+.about-book-title {
+  width: 95%;
+}
+.det-content {
+  display: block;
+  width: 99.5%;
+  margin-top: 8px;
+  padding-left: 10px;
+  text-indent: 4%;
+  text-justify: inter-word;
+}
+.sp-details-title {
+  font-weight: 390;
+}
+.det-book {
+  display: block;
+  float: left;
+  width: 58%;
+}
+.autor-books-container {
+  display: block;
+  width: 97.4%;
+  margin-top: 50px;
+  min-height: 345px;
+  margin-bottom: 39px;
+}
+.books-head {
+  display: block;
+  width: 65%;
+  margin-bottom: 16px;
+  margin-left: 6%;
+  padding-top: 9px;
+  padding-bottom: 9px;
+  height: 50px;
+  line-height: 35px;
+  padding-left: 4%;
+  padding-right: 2%;
+  font-size: larger;
+  color: rgba(77, 58, 52, 0.87);
+  background-color: rgba(188, 197, 136, 0.404);
+}
+.bookSlider {
+  position: sticky;
+  margin-top: 40px;
+  margin-bottom: -120px;
+  width: 5%;
+  z-index: 888;
+}
+.bookSlider-next {
+  display: block;
+  margin-left: 98.03382493%;
+  margin-top: 103px;
+  margin-bottom: -145px;
+}
+.bookSlider-prev {
+  margin-top: 103px;
+  margin-bottom: -145px;
+  margin-left: -1.935%;
+}
+.btn-slider {
+  display: block;
+  width: 40px;
+  height: 42px;
+  background-color: rgba(186, 253, 216, 0.664);
+  color: rgba(82, 67, 57, 0.815);
+  border: 0.9px dotted rgba(89, 206, 89, 0.849);
+  border-radius: 35%;
+  transition: all 70ms;
+}
+.btn-slider:hover {
+  cursor:pointer;
+  background-color: rgba(117, 255, 179, 0.822);
+  color: rgba(49, 39, 32, 0.884);
+  border: 1.4px dotted rgba(74, 216, 74, 0.911);
+}
+.scroll-right:active {
+  transform: translateX(2px);
+}
+.scroll-left:active {
+  transform: translateX(-2px);
+}
+.slide-icon {
+  scale: 1.2;
+  padding-top: 2px;
+}
+.left-slide-icon {
+  padding-left: 5px;
+}
+.right-slide-icon {
+  padding-left: 2px;
+}
+.container-booksSlide {
+  position: relative;
+  overflow: hidden;
+  width: auto;
+  height: 421px;
+}
+#drag-container {
+  scroll-behavior: smooth;
+  scroll-snap-type: proximity;
+  transition: all 100ms;
+}
+.drag-scroll {
+  position: absolute;
+  overflow: scroll;
+  scroll-behavior:inherit;
+  scroll-snap-type: proximity;
+  inset: 0px;
+  margin-right: -17px;
+  padding-top: 5px;
+  margin-left: 5px;
+  margin-bottom: 0px;
+}
+.mobile-slider {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  min-width: 240%;
+  padding-left: 0.7%;
+}
+.bookSlider-card {
+  display: block;
+  width: 7.6%;
+  margin-left: 13px;
+  margin-right: 5px;
+  margin-bottom: 14px;
+  min-height: 347px;
+  background-color: rgba(247, 240, 166, 0.842);
+  border: 1.8px groove rgba(248, 223, 176, 0.774);
+  transition: all 90ms;
+}
+.bookSlider-card:hover {
+  box-shadow: 0 0 19.8px rgb(255, 244, 95);
+  scale: 1.01;
+}
+.bookSlide-image {
+  display: block;
+  margin-bottom: -5px;
+  width: 100%;
+  min-height: 215px;
+}
+.img-slide {
+  padding-right: 0;
+  width: 100%;
+  max-height: 295px;
+}
+.bookSlide-content {
+  display: block;
+  margin-top: 0;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: rgba(245, 237, 146, 0.856);
+}
+.slide-title {
+  display: block;
+  margin-bottom: 0;
+  margin-top: 5px;
+  padding-left: 3.5%;
+  line-height: 18px;
+  font-size: 14.8px;
+  color: rgba(65, 83, 30, 0.89);
+}
+.slide-price {
+  display: block;
+  font-size: 14.5px;
+  text-indent: 65%;
+  margin-top: 0px;
+  color: rgba(43, 75, 38, 0.925);
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 25px;
+  height: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background: #dcf8f8dc;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(147, 167, 154, 0.781);
+  border-radius: 7px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(127, 150, 135, 0.911);
+}
+#reviews-section {
+  display: block;
+  width: 97.5%;
+  min-height: 240px;
+  margin-top: 20px;
+  margin-right: 5%;
+  border-top: 3.4px double rgba(95, 212, 158, 0.575);
+}
+.reviews-header {
+  display: block;
+  width: 95%;
+  height: 170px;
+  margin-left: 2%;
+  margin-top: 48px;
+  padding: 5px;
+  color: rgba(24, 35, 54, 0.89);
+  background-color: rgba(212, 235, 164, 0.527);
+}
+.reviews-header:hover {
+  color: rgba(33, 48, 75, 0.952);
+  background-color: rgba(217, 235, 179, 0.582);
+  box-shadow: 0 -2.4px 2.8px rgba(214, 240, 193, 0.274) inset, -2.4px 0 2.8px rgba(194, 238, 218, 0.288) inset,
+              2.4px -3.4px 2.8px rgba(187, 233, 207, 0.281) inset;
+}
+.reviews-item {
+  display: block;
+  width: 45%;
+  padding-left: 1%;
+}
+.reviews-title {
+  display: block;
+  width: 85%;
+  margin-top: 4px;
+}
+.reviews-title h3 {
+  display: block;
+  margin-top: 7px;
+  margin-bottom: 3px;
+  font-size: 23px;
+}
+.reviews-ratingContainer {
+  display: block;
+  float: left;
+  clear: both;
+  width: 35%;
+  padding: 2px;
+  margin-top: 10px;
+}
+.ratingStar-img {
+  width: 28px;
+  height: 28px;
+}
+.reviews-numReviews {
+  display: block;
+  float: left;
+  margin-left: 0;
+  margin-top: 12px;
+}
+
+.writeButtonContainer {
+  display: block;
+  float: left;
+  width: 40%;
+  height: 90px;
+  margin-top: -35px;
+  margin-left: 4%;
+}
+.writeReviewButton {
+  display: block;
+  width: 48%;
+  height: 50px;
+  padding-left: 2%;
+  padding-right: 2%;
+  line-height: 44px;
+  font-size: large;
+  text-align: center;
+  color: rgba(48, 33, 71, 0.856);
+  border-radius: 19%;
+  background-color: rgba(163, 235, 104, 0.863);
+  transition: all 75ms;
+}
+.writeReviewButton:hover {
+  color: rgb(57, 30, 97);
+  border-radius: 2%;
+  background-color: rgba(166, 238, 107, 0.979);
+}
+.reviews-container {
+  width: 97%;
+  margin-left: 1%;
+  margin-top: 0px;
+  border-top: 1.6px double rgba(169, 211, 103, 0.61);
+}
+.review-box {
+  display: block;
+  width: 98%;
+  margin-left: 1.05%;
+  margin-top: 0;
+  padding-left: 1%;
+  padding-right: 0.5%;
+  padding-top: 19px;
+  color: rgba(99, 104, 75, 0.877);
+  background-color: rgba(203, 226, 152, 0.178);
+  border-bottom: 2px dashed rgba(159, 192, 93, 0.514);
+  border-left: 1.4px double rgba(154, 190, 80, 0.377);
+  border-right: 1.4px double rgba(155, 190, 85, 0.411);
+}
+.review-box:hover {
+  color: rgba(68, 71, 50, 0.945);
+  background-color: rgba(235, 245, 214, 0.397);
+}
+.review-title {
+  display: block;
+  float:inline-start;
+  clear: both;
+  margin-top: 7px;
+}
+.rating-starsCard {
+  display: block;
+  float: left;
+}
+.review-headline {
+  display: block;
+  float: none;
+  line-height: -5px;
+  margin-top: -2px;
+  padding-bottom: 8px;
+  padding-left:14%;
+  font-size: large;
+}
+.review-verifiedPurchaseTitle {
+  display: block;
+  float: right;
+  margin-right: 5%;
+  width: 170px;
+  text-indent: 13px;
+  border: 2px groove rgba(189, 143, 122, 0.74);
+  background-color: rgba(231, 194, 145, 0.884);
+
+}
+.review-byLine {
+  display: block;
+  float: inline-start;
+  margin-top: 10px;
+}
+.review-controls {
+  margin-left: 5%;
+}
+.review-voteButton {
+  margin-left: 2px;
+  margin-top: 10px;
+  padding-top: 5px;
+  cursor: pointer;
+  background-color: transparent;
+  border:0.1px solid rgba(247, 217, 169, 0.534);
+  transition: all 45ms;
+}
+.review-voteButton:hover {
+  border:0.4px solid rgba(248, 209, 146, 0.945);
+}
+.review-voteButton:active {
+  scale: 1.03;
+  border:0.8px double rgba(248, 174, 131, 0.856);
+}
+.favorite-icon-empty, .flag-icon-empty {
+  color: rgba(53, 95, 64, 0.877);
+}
+.favorite-icon {
+  color: rgba(184, 8, 131, 0.945);
+}
+.flag-icon {
+  color: rgba(156, 12, 12, 0.918);
+}
+
+@media (max-width: 1220px) {
+  .review-headline {
+    padding-left:17%;
+  }
+}
+@media (max-width: 1199px) {
+  .bookSlider-card {
+    width: 7.18%;
+    margin-left: 13px;
+  }
+  .mobile-slider {
+    min-width: 250%;
+  }
+  .reviews-ratingContainer {
+    width: 39%;
+  }
+  .writeReviewButton {
+    width: 58%;
+  }
+}
+@media (max-width: 1158px) {
+  .extend-containerUp {
+    min-height: 1090px;
+  }
+  .link-res {
+    margin-left: 29.4%;
+    margin-top: -9.9px;
+    font-size: 14.3px;
+  }
+  .second-part {
+    width: 135%;
+    margin-left: -34.5%;
+  }
+  #details-card {
+    width: 95.5%;
+  }
+  .mobile-slider {
+    min-width: 257%;
+  }
+  .card-autor {
+    margin-bottom: 10px;
+  }
+  .btn-group-lg {
+    margin-top: 15px;
+    margin-left: 4%;
+  }
+  .btn-group-rg {
+    margin-left: 4.4%;
+  }
+  .btn-format {
+    margin-left: 3%;
+    width: 28%;
+  }
+  .btn-state {
+    width: 27.5%;
+    margin-left: 2.8%;
+  }
+  .btn-state:hover {
+    margin-left: 2.8%;
+  }
+  .btn-format:hover {
+    margin-left: 3%;
+  }
+  .btn-format:nth-child(5) {
+    margin-left: 19%;
+  }
+}
+@media (max-width: 1105px) {
+  .container-up {
+    min-height: 840px;
+  }
+  .ratingStar-sp {
+    width: 14.5%;
+  }
+  .extend-containerUp {
+    min-height: 1140px;
+  }
+} 
+@media (max-width: 1091px) {
+  .card-body {
+    margin-left:0;
+  }
+  #left-wrapper {
+    width: 24.5%;
+    margin-left: -5px;
+  }
+  .rating-top {
+    margin-top: -7px;
+    margin-left: 40px;
+  }
+  #right-wrapper {
+    width: 76.5%;
+    margin-right: -20px;
+    margin-left: 10px;
+  }
+  .card-select {
+    width: 65%;
+    padding-left: 1.7%;
+    padding-right: 0.5%;
+  }
+  .btn-group-lg {
+    margin-left: 0.6%;
+  }
+  .btn-group-rg {
+    margin-left: 1%;
+  }
+  .btn-format {
+    width: 29%;
+  }
+  .btn-state {
+    width: 28.5%;
+  }
+  .card-info {
+    width: 35%;
+  }
+  #addCartBtn {
+    width: 98%;
+  }
+  .container-down {
+    width: 93%;
+    margin-left: 4.1%;
+  }
+  .autor-books-container {
+    width: 98.9%;
+    margin-left: -2%;
+  }
+  .container-booksSlide {
+    width: 102%;
+  }
+  .bookSlider-next {
+    margin-left: 99.03382493%;
+  }
+  .bookSlider-prev {
+    margin-left: -2.335%;
+  }
+  #details-card {
+    width: 96.5%;
+  }
+  .mobile-slider {
+    min-width: 257%;
+  }
+  .review-headline {
+    padding-left:20%;
+  }
+  .reviews-ratingContainer {
+    width: 44%;
+  }
+}
+@media (max-width: 1000px) {
+  .ratingStar-sp {
+    width: 14.9%;
+  }
+  .btn-group-rg {
+    margin-left: 0%;
+  }
+  .btn-format {
+    width: 31.5%;
+    margin-left: 3.7%;
+  }
+  .btn-format:hover {
+    margin-left: 3.7%;
+  }
+  .btn-format:nth-child(5) {
+    margin-left: 3.7%;
+  }
+  .btn-state {
+    width: 30.5%;
+  }
+  .dots {
+    margin-left: 73%;
+  }
+  .read-allBtn {
+    cursor: pointer;
+    margin-left: 0px;
+    width: 16%;
+  }
+  .read-btnSpace {
+    margin-left: 73%;
+  }
+  .reviews-item {
+    width: 55%;
+  }
+  .writeReviewButton {
+    width: 68%;
+  }
+  .reviews-title {
+    width: 100%;
+    text-indent: 20px;
+  }
+}
+@media (max-width: 930px) {
+  .extend-containerUp {
+    min-height: 1090px;
+  }
+  .second-part {
+    width: 100%;
+    margin-left: 0%;
+  }
+  .regroup {
+    width: 100%;
+    margin-left: 0%;
+  }
+  .container-down {
+    width: 91%;
+    margin-left: 4.9%;
+  }
+  .container-extended {
+    width: 91%;
+    margin-left: 4.9%;
+  }
+  .mobile-slider {
+    min-width: 305%;
+  }
+  .bookSlider-card {
+    width: 7.38%;
+    transition: all 85ms;
+  }
+  .bookSlider-card:hover {
+    scale: 1;
+    transform: translateY(4px);
+  }
+  #reviews-section {
+    width: 100%;
+  }
+}
+@media (max-width: 880px) {
+  #details-card {
+    width: 100%;
+    min-height: 320px;
+    margin-top: 40px;
+    margin-left: 0;
+  }
+  .review-headline {
+    padding-left:23.5%;
+  }
+  .writeReviewButton {
+    width: 78%;
+  }
+}
+@media (max-width: 744px) {
+  #details-card {
+    width: 100%;
+    min-height: 320px;
+    margin-top: 40px;
+    margin-left: 0;
+  }
+  .mobile-slider {
+    min-width: 325%;
+  }
+  .review-headline {
+    padding-left:23.5%;
+  }
+  .writeReviewButton {
+    width: 78%;
+  }
+}
+@media (max-width: 724px) {
+  #details-card {
+    width: 100%;
+    min-height: 320px;
+    margin-top: 40px;
+    margin-left: 0;
+  }
+  .mobile-slider {
+    min-width: 325%;
+  }
+  .review-headline {
+    padding-left:23.5%;
+  }
+  .writeReviewButton {
+    width: 78%;
+  }
+}

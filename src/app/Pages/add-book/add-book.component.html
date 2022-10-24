@@ -1,0 +1,167 @@
+<section [class.card]="!pgSv.collapse" [class.expand]="pgSv.collapse">
+    <div class="card-body">
+      <h4 class="card-title">Nuevo Libro</h4>
+      <h6 class="card-subtitle">Agregación</h6>
+
+      <form
+        (submit)="submitForm()"
+        class="form-horizontal p-t-20"
+        autocomplete="off"
+        [formGroup]="libroForm"
+      >
+        <section id="columna-1">
+          <div class="form-group row">
+            <label for="uname" class="control-label">Titulo</label>
+            <div class="input-group">
+              <input
+                type="text"
+                autocomplete="off"
+                class="form-control"
+                formControlName="titulo"
+                id="uname"
+                placeholder="Titulo libro"
+              />
+              <div class="input-group-addon-icon">
+                <span class="material-icons">title</span>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="autor" class="control-label">Escritor</label>
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="autor"
+                id="autor"
+                placeholder="Nombre escritor"
+              />
+              <div class="input-group-addon-icon">
+                <span class="material-icons"> face</span>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="edit" class="control-label">Edición</label>
+            <div class="input-group">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="editorial"
+                id="edit"
+                placeholder="Casa editorial"
+              />
+            </div>
+            <div class="input-group-addon-icon">
+              <span class="material-icons"> format_shapes</span>
+            </div>
+          </div>
+          <div class="form-group lst-group">
+            <label for="lang" class="control-label">Idioma</label>
+            <div class="input-group">
+              <input
+                type="text"
+                autocomplete="off"
+                formControlName="idioma"
+                class="form-control"
+                id="lang"
+                placeholder="Idioma de escritura"
+              />
+            </div>
+            <div class="input-group-addon-icon">
+              <span class="material-icons"> explicit</span>
+            </div>
+          </div>
+          <div class="form-group rst-group">
+            <label for="pub" class="control-label">Aparición</label>
+            <div class="input-group">
+              <input
+                type="date"
+                autocomplete="off"
+                formControlName="publicado"
+                class="form-control date-control"
+                id="pub"
+                placeholder="Fecha de lanzamiento"
+              />
+            </div>
+            <div class="input-group-addon-icon date-icon">
+              <span class="material-icons"> event</span>
+            </div>
+          </div>
+          <div class="form-group lst-group select-group">
+            <label for="cob" class="control-label label-select">Cobertura</label>
+            <select formControlName="cobertura" id="cob" class="select form-control custom-select">
+                <option [ngValue]="null" disabled>Seleccione encuadernado</option>
+                <optgroup label="Física">
+                  <option *ngFor="let option of selectOptions1" [ngValue]="option">{{ option }}</option>
+                </optgroup>
+                <optgroup label="Digital">
+                  <option *ngFor="let option of selectOptions2" [ngValue]="option">{{ option }}</option>
+                </optgroup>
+            </select>
+            <div class="input-addon-icon">
+              <span class="material-icons"> import_contacts</span>
+            </div>
+          </div>
+          <div class="form-group lst-group">
+            <label for="isb" class="control-label">ISBN</label>
+            <div class="input-group">
+              <input
+                type="number"
+                autocomplete="off"
+                formControlName="isbn"
+                class="form-control"
+                id="isb"
+                placeholder="ISBN"
+              />
+            </div>
+            <div class="input-group-addon-icon">
+              <span class="material-icons"> verified</span>
+            </div>
+          </div>
+        </section>
+
+        <section id="columna-2">
+          <div class="form-group row">
+            <label for="desc" class="control-label">Descripción</label>
+            <!-- <div [class.hiden]="hideIcn" [class.icon-dsc]="!hideIcn">
+              <span class="material-icons">description</span>
+            </div> -->
+            <div class="input-group">
+              <textarea (mouseenter)="swichIcon()" (mouseleave)="swichIcon()" 
+              id="area-desc" cols="40" rows="10" 
+              formControlName="resumen"
+              placeholder="Una breve descripción..."></textarea>
+            </div>
+          </div>
+          <div class="form-group img-group">
+            <label for="img" class="control-label">Portada</label>
+            <div class="input-group">
+              <input
+                (change)="showPreview( $event )"
+                type="file"
+                class="form-control img-control"
+                formControlName="imagen"
+                id="img"
+              />
+              <div class="input-group-addon-icon">
+                <span class="material-icons"> insert_photo</span>
+              </div>
+            </div>
+            <div *ngIf="viewImg && archivoImg" id="preview">
+              <img id="view" [src]="viewImg" alt="book-cover">
+            </div>
+          </div>
+        </section>
+        
+
+        <div [class.m-b-1]="viewImg && archivoImg" class="form-group m-b-0">
+          <div class="offset-sm-3">
+            <button type="submit" class="btn btn-submit">
+              Añadir libro<span class="material-icons mti-lst">add</span>
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+</section>

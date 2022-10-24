@@ -1,0 +1,67 @@
+<section id="wrapper" [class.login-register]="!pagServ.collapse" [class.expand]="pagServ.collapse">
+  <div class="login-box card">
+    <div class="card-body">
+      <form class="form-horizontal form-material" id="loginform" autocomplete="off">
+
+        <a href="" class="text-center db">
+            <img id="logo-login" src="./../../../assets/logo/102-nt.png" alt="logo-register" />
+            <br /></a>
+        <h3 class="box-title">Iniciar sesión</h3>
+        <small></small>
+
+        <div class="form-group">
+            <input
+              class="form-control"
+              type="text"
+              placeholder="Email"
+            />
+        </div>
+        <div class="form-group">
+            <input
+              class="form-control"
+              type="password"
+              placeholder="Password"
+            />
+        </div>
+
+        <!-- Validaciones -->
+        <!-- <div class="row">
+          <p class="col text-danger" *ngIf="campoNoValido('nombre')">
+            El nombre es obligatorio(minimo 3 caracteres)
+          </p>
+          <p class="col text-danger" *ngIf="campoNoValido('email')">
+            El email es necesario
+          </p>
+          <p class="col text-danger" *ngIf="campoNoValido('password')">
+            La contraseña es necesaria(minimo 4 caracteres)
+          </p>
+          <p class="col text-danger" *ngIf="campoNoValido('confirmp')">
+            La confirmación de contraseña es necesaria
+          </p>
+          <p class="col text-danger" *ngIf="passwordsNoValidas()">
+            Las contraseñas no son iguales
+          </p>
+          <p class="col text-danger" *ngIf="aceptaTerminos()">
+            Debe de aceptar los términos de uso
+          </p>
+        </div> -->
+        <div class="form-group text-center m-t-5">
+            <button
+              class="btn-register btn-login"
+              type="submit"
+            >
+              Entrar
+            </button>
+        </div>
+        <div class="form-group m-b-0">
+          <div class="text-center link-div">
+            <p>
+              No tienes una cuenta ?
+              <a routerLink="../register" class="text-info m-l-5"><b>Registrate aquí</b></a>
+            </p>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
