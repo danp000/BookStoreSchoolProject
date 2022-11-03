@@ -1,0 +1,70 @@
+    <div [class.w1]="toggleBar" [class.w1-mover]="!toggleBar">
+      <button class="btn-menu" (click)="swichBar()">
+        <mat-icon class="display-iconMenu">{{ changeIcon() }}</mat-icon>
+      </button>
+    </div>
+
+    <nav [class.mini-bar]="pagServ.collapse" [class.collapse]="!pagServ.collapse">
+      <ul id="minibar-items">
+        <li id="mini-1" (mouseenter)="abrirLista( $event )" 
+            (mouseleave)="cerrarLista( $event )" routerLink="/"
+            class="icon-option"><mat-icon class="icon-display">list_alt</mat-icon></li>
+        <li class="item-bar">
+          <ul class="display-mini" id="mini-1-1" (mouseleave)="cerrarLista( $event )"
+              [class.mini-list]="idLista === 'mini-1'"
+              [class.collapse]="idLista !== 'mini-1'">
+              <li><a class="a-miniLink" href="#"><mat-icon>library_books</mat-icon> Buscar Libros </a></li>
+              <li><a class="a-miniLink" href=""><mat-icon>local_library</mat-icon> Géneros</a></li>
+              <li><a class="a-miniLink" href=""><mat-icon>recent_actors</mat-icon> Más Leídos</a></li>
+              <li><a class="a-miniLink" routerLink="">Novedades <mat-icon>new_releases</mat-icon></a></li>
+              <li><a class="a-miniLink" routerLink=""><mat-icon>fact_check</mat-icon> Recomendados</a></li>
+              <li><a class="a-miniLink" routerLink=""><mat-icon>forum icon</mat-icon>Autores</a></li>
+          </ul>
+        </li>
+        <li id="mini-2" (mouseenter)="abrirLista( $event )"
+           (mouseleave)="cerrarLista( $event )"
+            [class.icon-open]="idLista === 'mini-1'"
+            [class.icon-option]="idLista !== 'mini-1'"><mat-icon 
+            class="icon-display">folder_special</mat-icon></li>
+        <li class="item-bar">
+          <ul class="display-mini" id="mini-2-2" (mouseleave)="cerrarLista( $event )"
+              [class.mini-list]="idLista === 'mini-2'"
+              [class.collapse]="idLista !== 'mini-2'">
+              <li><a class="a-miniLink" routerLink=""> El Club<mat-icon>
+                  <mat-icon>contact_support</mat-icon></mat-icon></a></li>
+              <li><a class="a-miniLink" routerLink=""><mat-icon>contact_mail</mat-icon> Newsletters</a></li>
+              <li><a class="a-miniLink" routerLink=""><mat-icon>forum icon</mat-icon> Soporte</a></li>
+          </ul>
+        </li>    
+      </ul>
+    </nav>
+    
+    <nav [class.collapse]="pagServ.collapse" [class.sidebar-nav]="!pagServ.collapse">
+      <ul id="side-list">
+        <li class="list general">
+          <a class="a-listTitle" routerLink="/">
+              <span class="hide-menu"><mat-icon>list_alt</mat-icon> General <mat-icon>public</mat-icon>
+              </span></a>
+          <ul class="displayList">
+              <li><a routerLinkActive="active" routerLink="">Buscar Libros
+                  <mat-icon>screen_search_desktop</mat-icon></a></li>
+              <li><a >Géneros <mat-icon>menu_book</mat-icon></a></li>
+              <li><a >Más Leídos <mat-icon>maps_ugc</mat-icon></a></li>
+              <li><a routerLink="">Novedades <mat-icon>new_releases</mat-icon></a></li>
+              <li><a routerLink="">Recomendados <mat-icon>local_library</mat-icon></a></li>
+              <li><a routerLink="">Autores <mat-icon>contact_emergency</mat-icon></a></li>
+          </ul>
+        </li>
+      
+        <li class="list interes">
+          <a class="a-listTitle" aria-expanded="false">
+            <span class="hide-menu"><mat-icon>try</mat-icon> Datos <mat-icon>interests</mat-icon>
+              </span></a>
+          <ul class="displayList">
+              <li><a href="">Newsletters <mat-icon>outgoing_mail</mat-icon></a></li>
+              <li><a href="">El Club <mat-icon>broadcast_on_personal</mat-icon></a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav> 
+      

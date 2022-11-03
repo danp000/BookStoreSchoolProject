@@ -1,0 +1,227 @@
+* {
+  font-family: mitr-medium;
+}
+
+.login-register, .expand {
+  position: absolute;
+  margin-top: -0.5px;
+  background-image: url('./../../assets/background/c8dced.jpg');
+  background-position-x: center;
+  background-position-y:center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  border: 1.6px double rgba(255, 112, 77, 0.507);
+  height: 99.5%;
+  width: 76.9%;
+}
+.expand {
+  width: 91.9%;
+  height: 100%;
+  margin-left: -0.85%;
+}
+.card {
+  margin-top: 0px;
+}
+#logo-img {
+  width: 70px;
+  height: 66px;
+  border-radius: 34%;
+}
+.db {
+  display: block;
+  margin-left: 60%;
+  margin-top: -14px;
+}
+.box-title {
+  margin-top: -37px;
+  margin-bottom: 30px;
+  margin-left: 10%;
+  font-size: 25px;
+  letter-spacing: 2px;
+  color: rgba(230, 73, 0, 0.719);
+}
+.m-t-10 {
+  margin-top: 20px;
+}
+
+.card-body {
+  position: absolute;
+  width: 55%;
+  height: 540px;
+  top: 8%;
+  left: 23%;
+  border-radius: 20%;
+  background-color: rgba(242, 236, 255, 0.76);
+}
+
+.form-material {
+  width: 90%;
+  margin-top: 5%;
+  margin-left: 6.3%;
+  padding: 10px;
+}
+.form-group {
+  width: 100%;
+  margin-left: 5%;
+  padding-bottom: 15px;
+}
+.form-control {
+  width: 87.5%;
+  height: 35px;
+  font-size: large;
+  color: rgba(126, 102, 90, 0.89);
+}
+.form-control:hover {
+  background-color: rgba(255, 226, 206, 0.842);
+  color: rgba(92, 62, 45, 0.911);
+}
+.form-control:focus {
+  color: rgba(61, 29, 11, 0.918);
+  transform: scale(1.07, 1.09);
+}
+.checkbox {
+  font-size: large;
+}
+#checkbox-signup {
+  scale: 1.4;
+}
+a {
+  color: rgba(37, 24, 18, 0.897);
+} 
+a:hover {
+  color: rgba(187, 71, 18, 0.884);
+} 
+label, .text-center {
+  color: rgba(58, 45, 39, 0.897) ;
+}
+
+.btn-register {
+  width: 45%;
+  margin-left: 30%;
+  height: 35px;
+  cursor: crosshair;
+  font-size: large;
+  border: 2.4px double rgb(165, 146, 147);
+  color: rgba(109, 80, 64, 0.897);
+  background-color: rgba(224, 255, 236, 0.747);
+}
+.btn-register:hover {
+  border: 2.4px double rgba(175, 101, 108, 0.911);
+  color: rgba(104, 47, 30, 0.932);
+  scale: 1.07;
+  border-bottom-left-radius: 45%;
+  border-top-right-radius: 45%;
+  background-color: rgba(127, 198, 206, 0.815);
+}
+.btn-register:active {
+  transform: scale(0.95, 0.92);
+}
+
+@media (max-width: 1303px) {
+  .expand {
+    width: 91.4%;
+    margin-left: -0.40%;
+  }
+}
+@media (max-width: 1261px) {
+  .expand {
+    width: 91.1%;
+    margin-left: -0.15%;
+  }
+  .db {
+    display: block;
+    margin-left: 67%;
+  }
+  .btn-register {
+    width: 55%;
+  }
+  .form-material {
+    margin-left: 7%;
+  }
+}
+@media (max-width: 1211px) {
+  .box-title {
+    margin-top: -40px;
+    margin-bottom: 20px;
+  }
+  .db {
+    margin-left: 70%;
+  }
+}
+@media (max-width: 1181px) {
+  .card-body {
+    width: 61%;
+    left: 20%;
+  }
+  .expand {
+    width: 90.4%;
+    margin-left: 0.03%;
+  }
+  .login-register {
+    width: 74.9%;
+  }
+  .form-material {
+    margin-left: 6%;
+  }
+}
+@media (max-width: 1100px) {
+  .card-body {
+    width: 63%;
+    left: 18%;
+  }
+  .expand {
+    width: 91.7%;
+    margin-left: 0.4%;
+  }
+}
+@media (max-width: 1090px) {
+  .expand {
+    width: 91.6%;
+    margin-left: 0.51%;
+  }
+  .login-register {
+    width: 73.9%;
+  }
+
+}
+@media (max-width: 1055px) {
+  .expand {
+    width: 91.3%;
+    margin-left: 0.72%;
+  }
+  .card-body {
+    width: 68%;
+    left: 16.5%;
+  }
+}
+@media (max-width: 988px) {
+  .expand {
+    width: 90.7%;
+    margin-left: 1.35%;
+  }
+}
+@media (max-width: 930px) {
+  .login-register, .expand {
+    width: 99.5%;
+    margin-left: 0.1%;
+    border: 3.3px double rgba(212, 163,137, 1);
+  }
+}
+@media (max-width: 713px) {
+  .card-body {
+    width: 75%;
+    left: 12.5%;
+  }
+}
+@media (max-width: 645px) {
+  .card-body {
+    width: 80%;
+    left: 9.5%;
+  }
+}
+@media (max-width: 595px) {
+  .card-body {
+    width: 90%;
+    left: 4.9%;
+  }
+}

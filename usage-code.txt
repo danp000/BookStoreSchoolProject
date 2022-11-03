@@ -1,0 +1,22 @@
+ if (this.coversToSelect.indexOf(atr) <= this.coversToSelect.length) {
+      console.log(this.swichAllBtns + ' a');
+    }
+    if (this.coversToSelect.indexOf(atr) > 1) {
+      const index = this.coversToSelect.indexOf(atr);
+      console.log(index);
+      if (index >= 0) {
+        this.coversToSelect.splice(index, 1);
+        console.log(this.coversToSelect + ' b');
+      }
+      // debugger;
+      // this.coversToSelect = this.coversToSelect.filter(
+      //     a => a !== atr && a !== CONST.SEARCH_BUTTON_GROUP_ALL);
+    } else {
+      if (atr === this.swichAllBtns) {
+        this.coversToSelect = [atr];
+        console.log(this.coversToSelect + ' c');
+      } else {
+        this.coversToSelect.push(atr);
+        console.log(this.coversToSelect + ' d');
+      }
+    }

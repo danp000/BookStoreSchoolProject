@@ -1,0 +1,83 @@
+
+    <section [class.card]="!pgSv.collapse" [class.expand]="pgSv.collapse">
+      <div>
+        <div class="card-body">
+          <h4 class="card-title">Mi Cuenta</h4>
+          <h6 class="card-subtitle">Ajustes</h6>
+  
+          <form class="form-horizontal p-t-20"
+                autocomplete="off"
+                [formGroup]="perfilForm">
+            <div class="form-group row">
+              <label for="uname" class="col-sm-3 control-label">Nombre usuario</label>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    autocomplete="off"
+                    class="form-control"
+                    formControlName="nombre"
+                    id="uname"
+                    placeholder="Nombre usuario"
+                  />
+                  <div class="input-group-addon"><span class="material-icons">badge</span></div>
+                </div>
+            </div>
+            <div class="form-group">
+              <label for="email" class="col-sm-3 control-label">Correo</label>
+                <div class="input-group">
+                  <input
+                    type="email"
+                    class="form-control"
+                    formControlName="email"
+                    id="email"
+                    placeholder="Correo electrónico"
+                  />
+                  <div class="input-group-addon"><span class="material-icons">
+                        mail_outline</span></div>
+                </div>
+            </div>
+            <div class="form-group">
+              <label for="web1" class="col-sm-3 control-label">Role</label>
+                <div class="input-group">
+                  <input
+                    type="text"
+                    class="form-control"
+                    formControlName="role"
+                    id="web1"
+                    placeholder="Cual es tu role?"
+                  />
+                </div>
+                <div class="input-group-addon"><span class="material-icons">
+                    how_to_reg</span></div>
+            </div>
+            <div class="form-group lst-group">
+              <label for="pass" class="col-sm-3 control-label">Contraseña</label>
+                <div class="input-group">
+                  <input
+                    type="password"
+                    autocomplete="off"
+                    formControlName="password"
+                    class="form-control"
+                    id="pass"
+                    placeholder="Contaseña nueva"
+                  />
+                </div>
+                <div class="input-group-addon"><span class="material-icons">
+                    sync_lock</span>
+                </div>
+            </div>
+  
+            <div class="form-group m-b-0">
+              <div class="offset-sm-3">
+                <button
+                  type="submit"
+                  class="btn btn-submit"
+                >
+                  Guardar cambios<span class="material-icons mti-lst">save</span>
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>

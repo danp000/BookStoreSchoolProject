@@ -1,0 +1,88 @@
+<div class="review-formContainer">
+  <div id="reviewForm" class="review-form">
+
+    <section class="head-section" [class.extended-head]="pgSv.collapse">
+      <!-- === Image section === -->
+      <div class="review-formImage">
+        <img class="review-img" src="./../../../assets/books/a-tale-of-two-cities-0.jpg" alt="A Tale of Two Cities Book Cover">
+      </div>
+      <!-- === Rating - book info section === -->
+      <div class="review-title-ratingCard">
+        <span class="book-info">Estas reseñando - 
+          <a id="reviewTitle" href="">{{ bookTitle }}</a>
+          <a id="reviewAutor" href=""><small> de </small> Charles Dickens </a>
+        </span>
+        <br>
+        <span classname="review-errorMessage" aria-atomic="true" aria-live="assertive" role="status">
+        </span>
+        <div class="review-rating">
+          <button *ngIf="rated" class="reset-btn" type="button" (click)="resetRate()">
+            <span class="material-icons reset-icn">
+              restart_alt
+          </span></button>
+          <button *ngFor="let ratingId of ratingArray; index as i"
+                   (mouseenter)="hoverRating(i+1)" (mouseleave)="hoverRating(i-i)"
+                   [class.rating-fullStars]="rating === 5 || rated" class="review-ratingStar"
+                   [id]="'star_'+i" (click)="calculateRating(i+1)">
+              <img *ngIf="imageStatus(i) !== null"
+              [src]="imageStatus(i)" aria-hidden="true">
+          </button>
+           <p>
+              {{ stageOfRate() }}
+           </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- === Form section === -->
+    <section [class.extended-formBody]="pgSv.collapse" [class.resized-formBody]="!pgSv.collapse" 
+              class="review-formBody">
+      <div class="review-formBodyInput">
+        <div class="review-formBodySection">
+          <label for="review-headline-description">
+            <span class="bold">Encabezamiento</span>
+          </label>
+          <input type="text" class="review-textInput" id="review-headline-description" value="" placeholder="Ponle una breve descripción a tu reseña...">
+        </div>
+        <div class="review-formBodySection">
+          <label class="review-formSectionHeader" for="review-description">
+            <span class="bold">Contenido</span>
+            <br>
+          </label>
+          <div class="review-textBoxInput">
+            <textarea id="review-description" class="review-textArea" cols="50" rows="20" [placeholder]="placeholderTextarea"></textarea>
+          </div>
+        </div>
+        <div class="review-formBodySection">
+          <div class="review-formBodyCustomerName">
+            <label class="review-formSectionHeader" for="review-DisplayName-description">
+              <span class="bold">Tu nombre </span>
+              <br>
+            </label>
+            <div class="review-displayNameCard" id="review-DisplayName-description">
+              <input type="text" id="review-DisplayNameInput"
+                    placeholder="Nombre que quieres mostrar en tus reseñas..." value="">
+            </div>
+            <section class="review-formButtons">
+              <div class="button-container" title="">
+                <button class="Button btn-controls" type="button">Guarda</button>
+              </div>
+              <div class="button-container" title="">
+                <button class="Button btn-controls" type="button">Cancela</button>
+              </div>
+            </section>
+          </div>
+        </div>
+        <div class="review-termsOfUse">Al enviar una reseña, aceptas los <a href=""
+            target="_blank">Términos de uso</a> y la <a href="" target="_blank">Política de privacidad</a> de este sitio web.
+            <br>
+        </div>
+        <div class="review-formButtons">
+          <div class="ButtonSubmit-container" title="">
+            <button class="Button button-submit" type="button">Publicar reseña</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </div>
+</div>

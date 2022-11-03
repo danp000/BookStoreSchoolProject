@@ -1,0 +1,69 @@
+/* You can add global styles to this file, and also import other style files */
+@font-face{
+  font-family: trebuchetMS;
+  src: url(assets/fonts/TrebuchetMS.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: quando;
+  src: url(assets/fonts/Quando-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: capriola;
+  src: url(assets/fonts/Capriola-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: acme;
+  src: url(assets/fonts/Acme-Regular.ttf);
+  font-weight: normal;
+  font-style: normal;
+  font-stretch:  ultra-expanded;
+}
+@font-face {
+  font-family: mitr-semibold;
+  src: url(assets/fonts/Mitr/Mitr-SemiBold.ttf);
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: extra-expanded;
+}
+@font-face {
+  font-family: pridi-medium;
+  src: url(assets/fonts/Pridi/Pridi-Medium.ttf);
+  font-style: normal;
+}
+@font-face {
+  font-family: pridi-regular;
+  src: url(assets/fonts/Pridi/Pridi-Regular.ttf);
+  font-style: normal;
+}
+@font-face {
+  font-family: mitr-medium;
+  src: url(assets/fonts/Mitr/Mitr-Medium.ttf);
+  font-style: normal;
+}
+@font-face {
+  font-family: mitr-regular;
+  src: url(assets/fonts/Mitr/Mitr-Regular.ttf);
+  font-style: normal;
+}
+
+*{
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}
+

@@ -1,0 +1,383 @@
+<div id="body">
+  <div [class.extend-containerUp]="readOn" class="container container-up">
+    <div class="card-body">
+      <div id="left-wrapper">
+        <div class="card-image">
+          <img
+            class="card-img-top img-responsive"
+            src="./../../../assets/books/veinte-mil-leguas.jpg"
+            alt="book cover"
+          />
+        </div>
+        <div class="card-review">
+          <div class="rating-flex rating-top"
+              itemprop="aggregateRating"
+              itemtype="http://schema.org/AggregateRating"
+              tabindex="0"
+              aria-label="Rated 2.81 stars">
+            <meta content="2.81" itemprop="ratingValue" />
+            <meta content="2" itemprop="reviewCount"/>
+            <span *ngFor="let star of ratingArray; index as i"
+                  class="ratingStar-sp"
+                  title="Inicia sesión para calificar"
+                  style="cursor: default">
+              <img class="ratingStar-ov"
+                  [src]="starPaths[i]"
+                  [alt]="altOfStar[i]"
+                  aria-hidden="true"/>
+            </span>
+          </div>
+          <a class="link-res" (click)="scrollDownReviews()">Ver reseñas</a>
+        </div>
+      </div>
+      <div id="right-wrapper">
+        <div class="card-select">
+          <h4 class="card-title">{{ book.titulo }}</h4>
+          <h5 class="card-autor"><span class="de-sp">de </span>{{ book.escritor }}</h5>
+          <div class="btn-group btn-group-lg"
+               role="group"
+               aria-label="Seleccionar formato">
+            <h6 class="select-title">Seleccione formato</h6>
+            <button type="button" *ngFor="let es of book.cobertura; index as i" 
+                    (click)="selectFormat( es.estado, $event, es )" class="btn btn-format"
+                    [ngClass]="{selectedClass:(coverSelectAuto === es.estado) || 
+                                (!autoSelectCover && coverToSelect === es)}">
+                           {{ es.tipo }}
+              <span class="precio-btn">{{ es.precio }}€</span>
+            </button>
+          </div>
+          <div
+            class="btn-group btn-group-rg"
+            role="group"
+            aria-label="Seleccionar estado"
+          >
+            <h6 class="select-title">Seleccione condición</h6>
+            <button type="button" *ngFor="let es of book.cobertura; index as i" 
+                    (click)="selectState( listadoStates[i], $event, es)" class="btn btn-state" 
+                    [ngClass]="{selectedClass: (estadoSelectAuto === listadoStates[i] ) ||
+                                 (!autoSelectState && stateToSelect === es) || estadoActual === listadoStates[i]}"
+                    [disabled] = "!disableStateBtn(listadoStates[i])">
+                           {{ listadoStates[i] }}
+              <span class="precio-btn">--</span>
+              <span *ngIf="!disableStateBtn(listadoStates[i])" class="hidden-text">Indisponible</span>
+              <span *ngIf="disableStateBtn(listadoStates[i])" class="hidden-text">
+                    {{ showTotalStockState(listadoStates[i]) }} en stock</span>
+            </button>
+          </div>
+        </div>
+        <div class="card-info">
+          <h5 class="card-format">Formato: {{ selectedFormat }}</h5>
+          <h5 class="card-state">Estado: {{ estadoActual }}</h5>
+          <h6 class="card-disp">{{ coverToSelect.total }} disponibles</h6>
+          <div id="cant-select">
+            <label class="cant" for="cant-inp">Cantidad:</label>
+            <select #qty id="cantidad" (change)="calculatePrice()">
+              <!-- <option [ngValue]="null" disabled>Elije cantidad</option> -->
+              <span>{{ qtySelected }}</span>
+              <option *ngFor="let qty of iteratedQty" (ngModel)="qtySelected" 
+                      [ngValue]="qty">{{ qty }}
+              </option>
+            </select>
+          </div>
+          <h4 class="card-price">Precio: {{ priceFormat | number: '0.0-3' }}
+            <span class="material-icons icon-euro"> euro </span>
+          </h4>
+          <button id="addCartBtn" type="button">Agregar cesta
+            <span class="material-icons add-icon"> add_shopping_cart </span>
+          </button>
+        </div>
+      </div>
+      <div id="bottom-wrapper">
+        <div id="summary-bookCard">
+          <h4 class="sum-title">Descripción general del libro</h4>
+          <p [class.sum-long]="readOn" class="sum-content-short">
+            Veinte mil leguas de viaje submarino es una obra narrada en primera persona por el profesor francés Pierre Aronnax, notablebiólogo que es hecho prisionero por el Capitán Nemo y es conducido por los océanos a bordo del submarino Nautilus, en compañía de su criado Conseil y el arponero canadiense Ned Land. 
+            La historia comienza con una expedición a bordo de un buque de la marina de guerra estadounidense: el Abraham Lincoln, al mando del almirante Farragut, que busca dar caza a un extraño cetáceo, con un largo y filoso cuerno en el hocico (luego se demuestra que el animal es un narval), que había ocasionado daños a diversas embarcaciones. Durante la expedición, los protagonistas se ven lanzados por la borda del buque como resultado de una embestida del animal. El profesor Aronnax y su acompañante Conseil son rescatados por el arponero canadiense Ned Land, y los tres logran llegar a nado a un lugar seguro. Una vez a salvo, descubren que no se encuentran realmente en una isla, sino sobre una estructura metálica: un submarino a flote a cuyo interior acceden por una compuerta, llevados por ocho enmascarados.
+          </p>
+            <span class="dots" *ngIf="!readOn">....</span>
+            <button (click)="swichRead()" [class.read-btnSpace]="readOn" class="read-allBtn" type="button">
+                  {{ textRead() }}
+            </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <section [class.regroup]="pagServ.collapse" [class.second-part]="!pagServ.collapse">
+    <div [class.container-extended]="pagServ.collapse" class="container container-down">
+      <div id="details-card">
+        <div class="details det-edit">
+          <h5 class="det-title">Detalles de edición</h5>
+          <ul class="det-content">
+            <li *ngFor="let pb of pubDetails">
+              <span class="sp-details-title">{{ pb.title }}</span>: {{ pb.content }}
+            </li>
+          </ul>
+        </div>
+        <div class="details det-book">
+          <h5 class="det-title about-book-title">Más sobre el libro</h5>
+          <ul class="det-content about-book-list">
+            <li *ngFor="let lb of libro">
+              <span class="sp-details-title">{{ lb.title }}</span>: {{ lb.content }}
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="autor-books-container">
+        <h4 class="books-head">Más libros escritos por Julio Verne</h4>
+        <p></p>
+        <div class="books-wrapper">
+          <div class="book-slider has-next has-prev">
+            <div *ngIf="!scrollLeftEnd" class="bookSlider bookSlider-next">
+              <button (click)="scrollRight()" class="btn-slider scroll-right">
+                <span class="material-icons slide-icon right-slide-icon">
+                  arrow_forward_ios
+                </span>
+              </button>
+            </div>
+            <div *ngIf="scrollLeftPos !== 0" class="bookSlider bookSlider-prev">
+              <button (click)="scrollLeft()" class="btn-slider scroll-left">
+                <span class="material-icons slide-icon left-slide-icon">
+                  arrow_back_ios
+                </span>
+              </button>
+            </div>
+          </div>
+          <div class="container-booksSlide">
+            <div id="drag-container" class="drag-scroll">
+              <div class="mobile-slider">
+                <a class="bookSlider-card" routerLink="">
+                  <div class="bookSlide-image">
+                    <img class="img-slide" src="./../../../assets/books/capitan-de-quince.jpg" alt="">
+                  </div>
+                  <div class="bookSlide-content">
+                    <h5 class="slide-title">Un capitan de quince años</h5>
+                    <!-- <h6 class="slide-autor">Jules Verne</h6> -->
+                    <span class="slide-price">3.43€</span>
+                  </div>
+                </a>
+                <a class="bookSlider-card" routerLink="">
+                  <div class="bookSlide-image">
+                    <img class="img-slide" src="./../../../assets/books/alrededor_luna.jpg" alt="alrededor">
+                  </div>
+                  <div class="bookSlide-content">
+                    <h5 class="slide-title">Viaje alrededor de la luna</h5>
+                    <span class="slide-price">3.43€</span>
+                  </div>
+                </a>
+                <a class="bookSlider-card" routerLink="">
+                  <div class="bookSlide-image">
+                    <img class="img-slide" src="./../../../assets/books/la-vuelta-del-mundo-JV.jpg" alt="vuelta">
+                  </div>
+                  <div class="bookSlide-content">
+                    <h5 class="slide-title">La vuelta al mundo en 80 días</h5>
+                    <span class="slide-price">3.43€</span>
+                  </div>
+                </a>
+                <a class="bookSlider-card" routerLink="">
+                  <div class="bookSlide-image">
+                    <img class="img-slide" src="./../../../assets/books/capitan-de-quince.jpg" alt="capitan">
+                  </div>
+                  <div class="bookSlide-content">
+                    <h5 class="slide-title">Un capitan de quince años</h5>
+                    <span class="slide-price">3.43€</span>
+                  </div>
+                </a>
+                <a class="bookSlider-card" routerLink="">
+                  <div class="bookSlide-image">
+                    <img class="img-slide" src="./../../../assets/books/la-vuelta-del-mundo-JV.jpg" alt="vuelta">
+                  </div>
+                  <div class="bookSlide-content">
+                    <h5 class="slide-title">La vuelta al mundo en 80 días</h5>
+                    <span class="slide-price">3.43€</span>
+                  </div>
+                </a>
+                <a class="bookSlider-card" routerLink="">
+                  <div class="bookSlide-image">
+                    <img class="img-slide" src="./../../../assets/books/alrededor_luna.jpg" alt="alrededor">
+                  </div>
+                  <div class="bookSlide-content">
+                    <h5 class="slide-title">Viaje alrededor de la luna</h5>
+                    <span class="slide-price">3.43€</span>
+                  </div>
+                </a>
+                <a class="bookSlider-card" routerLink="">
+                  <div class="bookSlide-image">
+                    <img class="img-slide" src="./../../../assets/books/Cinco-semanas-en-globo.gif" alt="globo">
+                  </div>
+                  <div class="bookSlide-content">
+                    <h5 class="slide-title">Cinco semanas en el globo</h5>
+                    <span class="slide-price">3.43€</span>
+                  </div>
+                </a>
+                <a class="bookSlider-card" routerLink="">
+                  <div class="bookSlide-image">
+                    <img class="img-slide" src="./../../../assets/books/De-la-Tierra-a-la-Luna.jpg" alt="tierraluna">
+                  </div>
+                  <div class="bookSlide-content">
+                    <h5 class="slide-title">De la tierra a la luna</h5>
+                    <span class="slide-price">13.43€</span>
+                  </div>
+                </a>
+                <a class="bookSlider-card" routerLink="">
+                  <div class="bookSlide-image">
+                    <img class="img-slide" src="./../../../assets/books/Dos-anos-de-vacaciones.jpg" alt="vacaciones">
+                  </div>
+                  <div class="bookSlide-content">
+                    <h5 class="slide-title">Dos años de vacaciones</h5>
+                    <span class="slide-price">13.43€</span>
+                  </div>
+                </a>
+                <a class="bookSlider-card" routerLink="">
+                  <div class="bookSlide-image">
+                    <img class="img-slide" src="./../../../assets/books/hijos_capitan_grant.jpg" alt="grant">
+                  </div>
+                  <div class="bookSlide-content">
+                    <h5 class="slide-title">Los hijos del capitan Grant</h5>
+                    <span class="slide-price">13.43€</span>
+                  </div>
+                </a>
+                <a class="bookSlider-card" routerLink="">
+                  <div class="bookSlide-image">
+                    <img class="img-slide" src="./../../../assets/books/la_jangada.jpg" alt="jangada">
+                  </div>
+                  <div class="bookSlide-content">
+                    <h5 class="slide-title">La jangada</h5>
+                    <span class="slide-price">13.43€</span>
+                  </div>
+                </a>
+                <a class="bookSlider-card" routerLink="">
+                  <div class="bookSlide-image">
+                    <img class="img-slide" src="./../../../assets/books/robinsones.jpg" alt="robins">
+                  </div>
+                  <div class="bookSlide-content">
+                    <h5 class="slide-title">Escuela de Robinsones</h5>
+                    <span class="slide-price">13.43€</span>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <section id="reviews-section">
+        <div class="reviews-header">
+          <div class="reviews-item">
+            <div class="reviews-title">
+              <h3>Valoración de los clientes</h3>
+              <div class="reviews-mobileLink"><small></small></div>
+            </div>
+            <div class="reviews-overallScore" tabindex="0">
+              <div class="reviews-ratingContainer">
+                <div class="rating-flex rating-bottom" tabindex="0" aria-label="Rated 4.57 stars">
+                  <span *ngFor="let star of ratingArray; index as i"
+                        class="ratingStar"
+                        title="Inicia sesión para calificar"
+                        style="cursor: default">
+                    <img class="ratingStar-img"
+                        [src]="starPaths[i]"
+                        [alt]="altOfStar[i]"
+                        aria-hidden="true"/>
+                  </span>
+                </div>
+              </div>
+              <div class="reviews-numReviews"><small>14 customer ratings | 6 reviews</small></div>
+            </div>
+          </div>
+          <div class="writeButtonContainer">
+            <a class="writeReviewButton" routerLink="./../review">Escribe una reseña</a>
+          </div>
+        </div>
+        <div class="reviews-container">
+          <div class="review-box">
+            <h4 class="review-title">
+              <!-- <div class="tb-hiddenText">Rated 2 stars</div> -->
+              <div class="rating-starsCard">
+                <img class="ratingStar-img" src="./../../../assets/diversos/rating-star.png" alt="Full Star" aria-hidden="true">
+                <img class="ratingStar-img" src="./../../../assets/diversos/rating-star.png" alt="Full Star" aria-hidden="true">
+                <img class="ratingStar-img" src="./../../../assets/diversos/star-edit-outline-rating.png" alt="Empty Star" aria-hidden="true">
+                <img class="ratingStar-img" src="./../../../assets/diversos/star-edit-outline-rating.png" alt="Empty Star" aria-hidden="true">
+                <img class="ratingStar-img" src="./../../../assets/diversos/star-edit-outline-rating.png" alt="Empty Star" aria-hidden="true">
+              </div>
+              <span class="review-headline">Not the same book as the picture shown</span>
+            </h4>
+            <div class="review-byLine">By Emma, 
+              <time datetime="2020-05-13T09:00:44.733" title="2020-05-13T09:00:44.733">
+                   May 13, 2020</time>
+               <span class="review-accountTitle review-verifiedPurchaseTitle">Verified Purchase</span>
+            </div>
+            <div>
+              <p class="review-bodyText">I ordered this book thinking the hardcover would look like the picture and instead I got a hardcover version of the book that was just black and not with the picture and detail the image showed when ordering the book. Extremely disappointed.... </p>
+            </div>
+            <p class="review-controls">2
+              <span>
+                <button (click)="voteReview()" class="review-voteButton is-link" title="Like" type="button">
+                  <!-- <div class="tb-hiddenText">Like this review</div> -->
+                  <span *ngIf="!reviewVoted" class="material-icons favorite-icon-empty">
+                    favorite_border
+                  </span>
+                  <span *ngIf="reviewVoted" class="material-icons favorite-icon">
+                    favorite
+                  </span>
+                </button>
+              </span><em class="review-tip"></em>
+              <span><span class="review-flagSpan"> Report</span>
+                <button (click)="reportReview()" class="review-voteButton is-link" title="" type="button">
+                  <!-- <div class="tb-hiddenText">Report this review</div> -->
+                  <span *ngIf="!reviewReported" class="material-icons flag-icon-empty">
+                    outlined_flag
+                  </span>
+                  <span *ngIf="reviewReported" class="material-icons flag-icon">
+                    flag
+                  </span>
+                </button><em class="review-tip"></em>
+              </span>
+            </p>
+          </div>
+          <div class="review-box">
+            <h4 class="review-title">
+              <!-- <div class="tb-hiddenText">Rated 2 stars</div> -->
+              <div class="rating-starsCard">
+                <img class="ratingStar-img" src="./../../../assets/diversos/rating-star.png" alt="Full Star" aria-hidden="true">
+                <img class="ratingStar-img" src="./../../../assets/diversos/rating-star.png" alt="Full Star" aria-hidden="true">
+                <img class="ratingStar-img" src="./../../../assets/diversos/star-edit-outline-rating.png" alt="Empty Star" aria-hidden="true">
+                <img class="ratingStar-img" src="./../../../assets/diversos/star-edit-outline-rating.png" alt="Empty Star" aria-hidden="true">
+                <img class="ratingStar-img" src="./../../../assets/diversos/star-edit-outline-rating.png" alt="Empty Star" aria-hidden="true">
+              </div>
+              <span class="review-headline">Not the same book as the picture shown</span>
+            </h4>
+            <div class="review-byLine">By Emma, <time datetime="2020-05-13T09:00:44.733" title="2020-05-13T09:00:44.733">May 13, 2020</time>
+              <span class="review-accountTitle review-verifiedPurchaseTitle">Verified Purchase</span>
+            </div>
+               <div>
+                <p class="review-bodyText">What a relief! This was a short, simple, easy read that I truly enjoyed. The young and beautiful Miss Lucy Honeychurch, accompanied by her dear older friend Miss Bartlett, is first introduced to the reader in Florence, just arrived at the pension they will be staying at during the course of their holiday in Italy. The ladies are vexed to find that they have not received rooms with the views they wished for; overhearing them, an elderly man and his son offer to trade rooms with them, for they have rooms with perfect views; and hence the title of the book. This is when Lucy first meets George Emerson, an attractive, if not unconventional, young Englishman. Lucy encounters him again when she witnesses a public murder in the streets, and George attends to her after she faints. This is when his passion for her is first ignited. This inward flame is only stoked more when he and his father are accidentally invited on a daily outing with Lucy and her friends, and George sees Lucy alone in a field full of flowers, beautiful and surrounded by beauty. He cannot help but kiss her, which is entirely un-gentleman-like. Miss Bartlett witnesses George's display of affection, and decides that to keep her young companion's innocence safe from George's intentions, the two of them must leave immediately for Rome, without so much as a goodbye to George or his father, and stay with some family friends, the Vyses. The story opens up again in a quiet, small neighborhood in the country, with Miss Lucy Honeychurch engaged to Cecil Vyse, whom she became better acquainted with in Rome. Then, by mere coincidence--or is it fate?--George Emerson and his father, whom Lucy never expected to see again, reenter into her life, and complicate things. Should Lucy flout convention and follow her heart, which is leading her to George, or will she remain with Cecil, the safe and respectable choice, who she knows can never make her truly happy? Find out for yourself! Forster does a great job of painting with certain clarity and humor the scenes and characters of this story. This classic is a breath of fresh air, and I'm sure that even if you aren't a huge fan of British Literature, you will love it </p>
+              </div>
+              <p class="review-controls">2
+                <span>
+                  <button (click)="voteReview()" class="review-voteButton is-link" title="Like" type="button">
+                   <!-- <div class="tb-hiddenText">Like this review</div> -->
+                    <span *ngIf="!reviewVoted" class="material-icons favorite-icon-empty">
+                     favorite_border
+                    </span>
+                    <span *ngIf="reviewVoted" class="material-icons favorite-icon">
+                      favorite
+                    </span>
+                  </button>
+                </span><em class="review-tip"></em>
+                <span><span class="review-flagSpan"> Report</span>
+                  <button (click)="reportReview()" class="review-voteButton is-link" title="" type="button">
+                    <!-- <div class="tb-hiddenText">Report this review</div> -->
+                    <span *ngIf="!reviewReported" class="material-icons flag-icon-empty">
+                      outlined_flag
+                    </span>
+                    <span *ngIf="reviewReported" class="material-icons flag-icon">
+                      flag
+                    </span>
+                  </button><em class="review-tip"></em>
+                </span>
+              </p>
+          </div>
+        </div>
+      </section>
+    </div>  
+  </section>
+</div>

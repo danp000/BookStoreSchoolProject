@@ -1,0 +1,297 @@
+/* === General === */
+.review-formContainer {
+  width: auto;
+  height: auto;
+  padding: 1%;
+}
+#reviewForm {
+  display: block;
+  width: 100%;
+  min-height: 900px;
+  font-family: pridi-regular;
+  padding-top: 15px;
+  padding-left: 10px;
+}
+.head-section {
+  width: 100%;
+  height: auto;
+  margin-left: 0.4%;
+}
+.bold {
+  font-size: larger;
+  font-weight: 600;
+}
+/* ==================== */
+/* == Image section == */
+.review-formImage {
+  display: block;
+  float: left;
+  clear: both;
+  width: 15%;
+  margin-right: 0.8%;
+  margin-left: 0.8%;
+  max-height: 265px;
+}
+.review-img {
+  max-width: 98.5%;
+  max-height: 260px;
+}
+/* ==================== */
+/* == Rating section == */
+.review-title-ratingCard {
+  display: block;
+  margin-top: 0;
+  margin-bottom: 20px;
+  margin-left: 0.5%;
+  margin-right: 0.4%;
+  padding-left: 0.5%;
+  padding-left: 0.4%;
+  float: left;
+  width: 82%;
+}
+.review-rating {
+  display: block;
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+.book-info {
+  display: block;
+  height: 75px;
+  font-size: x-large;
+  font-weight: 600;
+}
+#reviewAutor {
+  display: block;
+  color: rgba(55, 106, 173, 0.884);
+  margin-bottom: -5px;
+}
+#reviewTitle {
+  color: rgba(49, 106, 160, 0.884);
+}
+.reset-btn {
+  display: block;
+  float: none;
+  margin-top: -29px;
+  margin-left: 1.55%;
+  height: 5%;
+  width: 8%;
+  padding-top: 1.2px;
+  background: transparent;
+  border: none;
+  box-shadow: 0 0 6px silver;
+  color: rgba(114, 98, 81, 0.932);
+}
+.reset-btn:hover {
+  cursor: pointer;
+  color: rgba(99, 80, 61, 0.932);
+}
+.reset-icn {
+  scale: 1.12;
+}
+.reset-icn:hover {
+  scale: 1.22;
+}
+.review-ratingStar {
+  margin-left: -4px;
+  margin-top: 5px;
+  width: 7%;
+  height: 5%;
+  background-color: transparent;
+  border: none;
+}
+.review-ratingStar img {
+  display: block;
+  width: 115%;
+  height: 100%;
+}
+.rating-fullStars {
+  margin-top: 5.2px;
+}
+.review-rating p {
+  display: block;
+  margin-top: 0px;
+  margin-left: 1.3%;
+  font-size: 16.5px;
+  font-weight: 595;
+}
+/* == Fin rating section == */
+
+/* == Form section == */
+.review-formBody {
+  display: block;
+  float: left;
+  min-height: 400px;
+  width: 88%;
+  margin-top: 30px;
+}
+.resized-formBody {
+  width: 97%;
+  margin-left: 1%;
+}
+.extended-formBody {
+  margin-left: -10%;
+}
+
+/* == Inputs, textarea == */
+#review-DisplayNameInput,
+.review-textInput,
+.review-textArea {
+  margin-bottom: 14px;
+  margin-top: 5px;
+  text-indent: 0.6%;
+  font-size: 18px;
+  font-weight: 480;
+  background-color: rgba(244, 248, 255, 0.938);
+  border: 1.4px double rgba(163, 196, 238, 0.959);
+  color: rgba(54, 54, 54, 0.87);
+  transition: all 145ms;
+}
+.review-textInput {
+  display: block;
+  width: 98.5%;
+  height: 40px;
+}
+.review-textArea {
+  display: block;
+  width: 98.5%;
+  height: 225px;
+  padding: 0.4%;
+  padding-left: 0.6%;
+}
+.review-formBodySection {
+  display: block;
+  margin-top: 30px;
+}
+.review-formBodyCustomerName {
+  width: 100%;
+  min-height: 100px;
+}
+.review-formSectionHeader {
+  margin-bottom: 11px;
+}
+.review-displayNameCard {
+  display: block;
+  float: left;
+  clear: both;
+  width: 45%;
+}
+#review-DisplayNameInput {
+  width: 90%;
+  height: 37px;
+  text-indent: 2%;
+}
+
+/* === Buttons === */
+.review-formButtons {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-top: 5px;
+}
+.button-container {
+  width: 34%;
+}
+.Button {
+  margin-top: 0;
+  width: 80%;
+  height: 35px;
+  background-color: rgba(193, 204, 224, 0.911);
+  box-shadow: 0 0 3px rgba(132, 139, 143, 0.63);
+  color: rgba(49, 55, 59, 0.87);
+  border: none;
+  font-size: large;
+  cursor: pointer;
+  transition: all 120ms;
+}
+.review-termsOfUse {
+  display: block;
+  margin-top: 0;
+}
+.review-termsOfUse a {
+  color: rgba(21, 38, 59, 0.795);
+}
+.ButtonSubmit-container {
+  display: block;
+  margin-top: 10px;
+  width: 100%;
+}
+.button-submit {
+  width: 40%;
+  font-size: 19px;
+}
+
+/*== Hover, focus, active ==*/
+.review-termsOfUse a:hover {
+  color: rgba(15, 30, 49, 0.952);
+}
+.Button:hover {
+  background-color: rgba(157, 184, 233, 0.938);
+  border: 2.8px double rgba(136, 180, 238, 0.815);
+  color: rgb(37, 39, 41);
+  box-shadow: 0 0 4px rgba(179, 186, 190, 0.63);
+}
+.Button:active {
+  border: 3.8px double rgba(104, 163, 240, 0.897);
+  scale: 0.98;
+}
+.review-textInput:hover,
+.review-textArea:hover,
+#review-DisplayNameInput:hover
+{
+  font-size: 20.5px;
+  color: rgb(41, 42, 43);
+}
+.review-textInput:focus,
+.review-textArea:focus,
+#review-DisplayNameInput:focus
+{
+  font-size: 20.5px;
+  font-weight: 545;
+  color: rgb(32, 33, 34);
+  background-color: rgb(248, 251, 255);
+  outline: none;
+  border: 3.3px double rgba(114, 135, 145, 0.726);
+}
+#review-DisplayNameInput:hover {
+  font-weight: 460;
+}
+#review-DisplayNameInput:focus {
+  font-weight: 500;
+}
+/* == End form section === */
+
+/* === Responsive section === */
+@media (max-width: 1128px) {
+  .review-formBody {
+    margin-top: 5px;
+  }
+  .extended-formBody {
+    margin-left: 1%;
+    width: 97.5%;
+  }
+}
+@media (max-width: 1092px) {
+  .button-submit {
+    width: 50%;
+  }
+}
+@media (max-width: 992px) {
+  .extended-head {
+    margin-left: 1.7%;
+  }
+  .extended-formBody {
+    margin-left: 2%;
+  }
+  .btn-controls {
+    width: 90%;
+  }
+}
+@media (max-width: 930px) {
+  .extended-head {
+    margin-left: 0.5%;
+  }
+  .extended-formBody {
+    margin-left: 1%;
+  }
+}
